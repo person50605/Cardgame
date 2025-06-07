@@ -10,10 +10,9 @@ hand = ["error","slap","punch","stab"];
 
 function cast(card) {
   
-  i = 1
+  i = 1;
   while hand [card] != cardindexnames[i] {
     i++
-    
   }
   document.getElementById("name").innerHTML = cardindexnames [i];
   document.getElementById("chosen").innerHTML = hand [i];
