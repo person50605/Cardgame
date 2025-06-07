@@ -1,5 +1,7 @@
 # Cardgame
 Card game
+# Cards are cool
+
 <html>
 
   <script src="main (33).py"></script>
