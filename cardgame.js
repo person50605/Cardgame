@@ -4,7 +4,7 @@ import string
 import math
 
 //More weight means more likely to spawn in a shop or randomly
-index_cards_weight = [0.5,2,1,1,1,0.5,1,0.5,1,1,0.75,1,1,0]
+index_cards_weight = [0.5,2,1,1,1,0.5,1,0.5,1,1,0.75,1,1,0];
 
 
 
@@ -15,25 +15,27 @@ index_cards_weight = [0.5,2,1,1,1,0.5,1,0.5,1,1,0.75,1,1,0]
 //print(str(index_cards_costs [8]))
 //print(str(index_cards_dmg [8]))
 
-index_cards_offensive = ["fireball","slash","cut","stab","magic missile","throw stone","cleave","ignite","punch","sicken","spit ooze"]
+index_cards_offensive = ["fireball","slash","cut","stab","magic missile","throw stone","cleave","ignite","punch","sicken","spit ooze"];
 //index_cards_defensive = []
 
-index_cards = ["fireball","slash","cut","stab","magic missile","heal","throw stone","cleave","ignite","punch","thorn shield","limber","sicken","spit ooze","consume","exhaust"]
-index_cards_costs = [3,1,1,1,2,3,1,3,2,1,2,2,1,2,2,1]
-index_cards_dmg   = [5,3,2,3,2,0,2,7,0,2,0,0,0,4,0,0]
+index_cards = ["fireball","slash","cut","stab","magic missile","heal","throw stone","cleave","ignite","punch","thorn shield","limber","sicken","spit ooze","consume","exhaust"];
+index_cards_costs = [3,1,1,1,2,3,1,3,2,1,2,2,1,2,2,1];
+index_cards_dmg   = [5,3,2,3,2,0,2,7,0,2,0,0,0,4,0,0];
 //Really dumb way to do this. Could store in one list, then use multiplication to search for second and third effects
-index_cards_effects = ["fire","","","bleed","accurate","heal","ranged","miss","fire","","thorns","evasion","poison","poison","grow","temporary"]
-index_cards_effects_potencies = [1,0,0,1,1,5,1,30,1,0,3,30,3,1,1,1]
+index_cards_effects = ["fire","","","bleed","accurate","heal","ranged","miss","fire","","thorns","evasion","poison","poison","grow","temporary"];
+index_cards_effects_potencies = [1,0,0,1,1,5,1,30,1,0,3,30,3,1,1,1];
 
-index_cards_effects2 = ["","","","","ranged","","","","burn","","","","","harm","heal",""]
-index_cards_effects_potencies2 = [0,0,0,0,1,0,0,0,3,0,0,0,0,3,3,0]
+index_cards_effects2 = ["","","","","ranged","","","","burn","","","","","harm","heal",""];
+index_cards_effects_potencies2 = [0,0,0,0,1,0,0,0,3,0,0,0,0,3,3,0];
 
-index_cards_effects3 = ["","","","","","","","","","","","","","shrink","",""]
-index_cards_effects_potencies3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+index_cards_effects3 = ["","","","","","","","","","","","","","shrink","",""];
+index_cards_effects_potencies3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0];
 
-index_effects_offensive = ["burn","bleed","poison"]
-index_effects_defensive = ["thorns","heal","evasion","consume"]
+index_effects_offensive = ["burn","bleed","poison"];
+index_effects_defensive = ["thorns","heal","evasion","consume"];
 
+
+//stores effects in the lists I think?
 index_cards_effects += index_cards_effects2
 index_cards_effects += index_cards_effects3
 
@@ -56,9 +58,9 @@ index_cards_info = [
 "Poison 3\nPoisons the target",
 "Harm 3\nPoison 1\nRanged\nSplits off a part of your body and shoots it at the target, dealing high damage and causing poison, but also causes you to take some damage.",
 "Grow 1\nHeal 3\nConsume the grass underneath you. Gives health and causes you to grow",
-"Temporary\nRest for a moment. Junk card."]
+"Temporary\nRest for a moment. Junk card."];
 
-"""
+/**
 Effects:
     
 
@@ -103,10 +105,10 @@ Effects:
         Can't miss or be dodged
         //Check before Miss.
         //Add a card that applies Accurate to any card
-"""
+**/
 
-index_effects = ["bleed","burn","cure","dispel","evasion","fire","heal","miss","poison","ranged","thorns","undodgeable","accurate","harm","grow","shrink","temporary"]
-index_effects_with_n = ["Bleed n","Burn n","Cure","Dispel X","Evasion n","Fire","Heal n","Miss n","Poison n","Ranged","Thorns n","Undodgeable","Accurate","Harm n","Grow n","Shrink n","Temporary"]
+index_effects = ["bleed","burn","cure","dispel","evasion","fire","heal","miss","poison","ranged","thorns","undodgeable","accurate","harm","grow","shrink","temporary"];
+index_effects_with_n = ["Bleed n","Burn n","Cure","Dispel X","Evasion n","Fire","Heal n","Miss n","Poison n","Ranged","Thorns n","Undodgeable","Accurate","Harm n","Grow n","Shrink n","Temporary"];
 index_effects_info = [
 "At end of turn, take n damage and remove one stack. Each application is tracked seperately.",
 "The next Fire attack will deal n more damage",
@@ -124,46 +126,46 @@ index_effects_info = [
 "Caster takes n damage. Does not proc 'When damaged' effects",
 "Your attacks do n extra damage",
 "Your attacks do n less damage",
-"This card is destroyed when it is cast, rather than discarded"]
+"This card is destroyed when it is cast, rather than discarded"];
 //Might be completely useless, but I'm leaving it in just in case
-index_lookup_cardnum = 0
+index_lookup_cardnum = 0;
 
 //Arrays start at 0
 
 //this is a function that stores template vars
-player_currentdeck = [1,2,3]
-player_transitiondeck = [1,2,3]
-player_deck = [0,1,2,3,4,5,6,7,8,9,10,11,12]
+player_currentdeck = [1,2,3];
+player_transitiondeck = [1,2,3];
+player_deck = [0,1,2,3,4,5,6,7,8,9,10,11,12];
 //Contains the number of each card in hand
-player_handnum = []
-player_hand = []
-player_mana = 0
-player_currentmana = 0
-player_health = 100
-player_maxhealth = 100
-player_statuses = []
-player_statuses_potencies = []
-player_discard = []
-player_exhaustion = 0
+player_handnum = [];
+player_hand = [];
+player_mana = 0;
+player_currentmana = 0;
+player_health = 100;
+player_maxhealth = 100;
+player_statuses = [];
+player_statuses_potencies = [];
+player_discard = [];
+player_exhaustion = 0;
 
 
-enemy_name = "slime"
-enemy_health = 100
-enemy_maxhealth = 100
-enemy_statuses = []
-enemy_statuses_potencies = []
-enemy_currentdeck = []
-enemy_deck = []
-enemy_transitiondeck = []
-enemy_hand = []
-enemy_discard = []
-enemy_exhaustion = 0
-enemy_template_names = ["slime","bat"]
-enemy_templatedecks = ["spit ooze","consume","heal","sicken","end","","end"]
-enemy_templatedecks_nums = [13,14,5,11,12,"end","","end"]
+enemy_name = "slime";
+enemy_health = 100;
+enemy_maxhealth = 100;
+enemy_statuses = [];
+enemy_statuses_potencies = [];
+enemy_currentdeck = [];
+enemy_deck = [];
+enemy_transitiondeck = [];
+enemy_hand = [];
+enemy_discard = [];
+enemy_exhaustion = 0;
+enemy_template_names = ["slime","bat"];
+enemy_templatedecks = ["spit ooze","consume","heal","sicken","end","","end"];
+enemy_templatedecks_nums = [13,14,5,11,12,"end","","end"];
 //print(index_cards [15])
-enemy_templatedecks_quantities = [9,5,2,3,"end",0,"end"]
-enemy_template_maxhealths = [100,50]
+enemy_templatedecks_quantities = [9,5,2,3,"end",0,"end"];
+enemy_template_maxhealths = [100,50];
 
 
 
@@ -173,46 +175,54 @@ enemy_template_maxhealths = [100,50]
 
 
 function draw (amount):
-    i = 1
-    while i <= amount and len(player_deck) > 0:
+    i = 1;
+    while i <= amount and len(player_deck) > 0 {
         //The length of the deck is actually 8, but since the arrays start at 0, the maximum value of the list will always be undefined 
-        if len(player_currentdeck) > 0:
-            card = random.randint(0,len(player_currentdeck)-1)
-            player_handnum.append (player_currentdeck [card])
-            player_hand.append (index_cards[player_currentdeck[card]])
-            player_currentdeck.pop(card)
-            i += 1
-        else:
-            print("could not draw a card because your deck is empty! Use the 'shuffle' command to shuffle your discard pile into your deck.")
-            i += amount + 1
+        if len(player_currentdeck) > 0 {
+            card = random.randint(0,len(player_currentdeck)-1);
+            player_handnum.append (player_currentdeck [card]);
+            player_hand.append (index_cards[player_currentdeck[card]]);
+            player_currentdeck.pop(card);
+            i += 1;
+        }
+        else {
+            print("could not draw a card because your deck is empty! Use the 'shuffle' command to shuffle your discard pile into your deck.");
+            i += amount + 1;
+        }
+    }
 
 //{{list name}}.append ({{value}})
 //player_deck.append (9)
 
 //Remember that card is a local var and needs to be inputted into the functions manually
-function lookup(card):
-    i = 0
-    index_lookup_cardnum = card
-    if card == "discard":
-        print ("Your discard pile:")
-        print (player_discard)
-        print ("The " + enemy_name +"'s discard pile:")
-        print (enemy_discard)
-    if card in index_cards:
+function lookup(card) {
+    i = 0;
+    index_lookup_cardnum = card;
+    if card == "discard" {
+        print ("Your discard pile:");
+        print (player_discard);
+        print ("The " + enemy_name +"'s discard pile:");
+        print (enemy_discard);
+    }
+    if card in index_cards {
         i = index_cards.index(card)
         print ("\n" + str(index_cards[i]) + "  cost: " + str(index_cards_costs[i]) + "  dmg: " + str(index_cards_dmg [i]) + "\n" + index_cards_info[i] + "\n")
-    elif card in index_effects:
+    }
+    elif card in index_effects {
         i = index_effects.index(card)
         print ("\n" + str(index_effects_with_n[i]) + "\n" + index_effects_info[i] + "\n")
-        
+    }
+}
 //Prompts for card to cast
-function prompt_attack():
-    if len(player_currentdeck) + len(player_hand) == 0:
+function prompt_attack() {
+    if len(player_currentdeck) + len(player_hand) == 0 {
         print ("You ran out of cards!")
         newdeck("player")
-    else:
+    }
+    else {
         print (player_hand)
         card = input ("type the number of a card to cast, its name to display card info, or 'end turn' to end your turn")
+    }
     
         if card == "shuffle":
             newdeck("player")
@@ -230,6 +240,7 @@ function prompt_attack():
         else:
             print ("invalid card")
             prompt_attack()
+}
 
 function cast (card,caster):
     global enemy_maxhealth
