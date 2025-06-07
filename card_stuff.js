@@ -17,5 +17,6 @@ function cast(card) {
   document.getElementById("name").innerHTML = cardindexnames [i];
   document.getElementById("chosen").innerHTML = hand [i];
   document.getElementById("fullhand").innerHTML = hand [1] + hand [2] + hand [3];
+  document.getElementById("eye").innerHTML = i;
   hand [card] = "";
 }
